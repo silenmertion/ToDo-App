@@ -1,0 +1,86 @@
+.todo-app {
+  max-width: 540px;
+  width: 100%;
+  transition: 0.4s;
+
+  margin: 100px auto 0px;
+  padding: 40px 30px 70px;
+
+  border-radius: 10px;
+  background: #fff;
+}
+
+.todo-app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #002765;
+
+  display: flex;
+  align-items: center;
+}
+
+.logo__img {
+  width: 34px;
+  margin-left: 10px;
+}
+
+.header__theme {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.switch {
+  display: inline-block;
+
+  position: relative;
+  width: 60px;
+  height: 30px;
+}
+
+.switch__input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.switch__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  border-radius: 34px;
+  background: #ccc;
+  transition: 0.4s;
+}
+
+.switch__slider::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 22px;
+  width: 22px;
+
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.4s;
+}
+
+.switch__input:checked + .switch__slider {
+  background: #6a00ff;
+}
+
+.switch__input:checked + .switch__slider::before {
+  transform: translateX(30px);
+}
