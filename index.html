@@ -20,17 +20,26 @@
 
           <label class="header__theme">
             Theme
-            <div class="switch">
+            <div class="theme-switch">
               <input
                 type="checkbox"
-                class="switch__input"
+                class="theme-switch__input"
                 onchange="themeChange()"
               />
-              <span class="switch__slider"></span>
+              <span class="theme-switch__slider"></span>
             </div>
           </label>
         </header>
-        <div class="task-add"></div>
+
+        <div class="task-adder">
+          <input
+            type="text"
+            class="task-adder__input"
+            placeholder="Enter a task"
+          />
+          <button class="task-adder__btn">Add</button>
+        </div>
+
         <ul class="list-container"></ul>
       </div>
     </div>

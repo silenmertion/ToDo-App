@@ -38,7 +38,7 @@
   column-gap: 14px;
 }
 
-.switch {
+.theme-switch {
   display: inline-block;
 
   position: relative;
@@ -46,13 +46,13 @@
   height: 30px;
 }
 
-.switch__input {
+.theme-switch__input {
   height: 0;
   width: 0;
   opacity: 0;
 }
 
-.switch__slider {
+.theme-switch__slider {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,25 +62,119 @@
   border-radius: 34px;
   background: #ccc;
   transition: 0.4s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 22px;
+    width: 22px;
+
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.4s;
+  }
 }
 
-.switch__slider::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  height: 22px;
-  width: 22px;
-
-  border-radius: 50%;
-  background: #fff;
-  transition: 0.4s;
-}
-
-.switch__input:checked + .switch__slider {
+.theme-switch__input:checked + .theme-switch__slider {
   background: #6a00ff;
 }
 
-.switch__input:checked + .switch__slider::before {
+.theme-switch__input:checked + .theme-switch__slider::before {
   transform: translateX(30px);
+}
+
+.task-adder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+  padding-left: 20px;
+
+  border-radius: 30px;
+  background: #edeef0;
+}
+
+.task-adder__input {
+  flex: 1;
+  padding: 16px 0px;
+}
+
+.task-adder__btn {
+  padding: 16px 50px;
+
+  font-size: 16px;
+
+  border-radius: 40px;
+  color: #fff;
+  background: #ff5945;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    background: #ff4d39;
+  }
+}
+
+.list-container {
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-container__item {
+  position: relative;
+
+  font-size: 18px;
+
+  padding: 12px 8px 12px 50px;
+
+  user-select: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+    background: url(/assets/img/unchecked.png) center;
+    background-size: cover;
+  }
+
+  &.checked {
+    color: #555;
+    text-decoration: line-through;
+  }
+
+  &.checked::before {
+    background: url(/assets/img/checked.png) center;
+    background-size: cover;
+  }
+}
+
+.rm-task {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+
+  border-radius: 50%;
+  color: #555;
+  transition: 0.2s;
+
+  &:hover {
+    color: #ff5945;
+    background: #edeef0;
+  }
 }
