@@ -39,9 +39,38 @@ function addTask() {
     alert("This Empty");
   } else {
     listContainer.insertAdjacentHTML("beforeend", taskHTML);
+    taskInput.value = "";
+    taskInput.focus();
   }
+  saveData();
 }
 
-function rmTask() {
-  console.log("Удаление задачи");
+function rmTask(e) {
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle("checked");
+  } else if (e.target.tagName === "SPAN") {
+    e.target.parentElement.remove();
+  }
+  saveData();
+}
+
+function saveData() {
+  localStorage.setItem("task-data", listContainer.innerHTML);
+}
+
+function showTasks() {
+  listContainer.innerHTML = localStorage.getItem("task-data");
+}
+
+showTasks();
+
+// Remove All task
+
+const rmListBtn = document.querySelector(".remove-list");
+
+rmListBtn.addEventListener("click", rmList);
+
+function rmList() {
+  listContainer.innerHTML = "";
+  localStorage.removeItem("task-data");
 }
