@@ -29,6 +29,7 @@ const taskBtn = document.querySelector(".task-adder__btn");
 
 taskBtn.addEventListener("click", addTask);
 listContainer.addEventListener("click", rmTask);
+taskInput.addEventListener("keyup", keyBtn);
 
 function addTask() {
   const taskValue = document.querySelector(".task-adder__input").value;
@@ -52,6 +53,12 @@ function rmTask(e) {
     e.target.parentElement.remove();
   }
   saveData();
+}
+
+function keyBtn(event) {
+  if (event.keyCode === 13) {
+    document.querySelector(".task-adder__btn").click();
+  }
 }
 
 function saveData() {
