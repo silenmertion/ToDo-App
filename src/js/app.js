@@ -28,7 +28,7 @@ const taskInput = document.querySelector(".task-adder__input");
 const taskBtn = document.querySelector(".task-adder__btn");
 
 taskBtn.addEventListener("click", addTask);
-taskBtn.addEventListener("click", rmTask);
+listContainer.addEventListener("click", rmTask);
 
 function addTask() {
   const taskValue = document.querySelector(".task-adder__input").value;
