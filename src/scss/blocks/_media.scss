@@ -17,6 +17,10 @@
 }
 
 @media (max-width: 475px) {
+  .todo-app__header {
+    gap: 10px;
+  }
+
   .task-adder__input {
     max-width: 220px;
   }
