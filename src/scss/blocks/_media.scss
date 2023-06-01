@@ -1,0 +1,37 @@
+@media (max-width: 550px) {
+  .todo-app {
+    padding: 40px 20px 0px;
+  }
+
+  .task-adder {
+    padding-left: 16px;
+  }
+
+  .task-adder__input {
+    max-width: 260px;
+  }
+
+  .task-adder__btn {
+    padding: 16px 40px;
+  }
+}
+
+@media (max-width: 475px) {
+  .task-adder__input {
+    max-width: 220px;
+  }
+
+  .task-adder__btn {
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .task-adder__input {
+    max-width: 180px;
+  }
+
+  .task-adder__btn {
+    padding: 16px 26px;
+  }
+}
